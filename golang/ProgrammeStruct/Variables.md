@@ -29,6 +29,10 @@ The zero value for a pointer of any type is nil. Pointer is comparable, two poin
 It is perfectly safe for a function to return address of a local variable.
 > `fmt.Println(f() == f())  // f() *int {} , print false`
 
-
-
+## The new Function
+Another way to create a variable is to use the built-in function new. The expression new(T) creates an *unnamed variable* of type T, initializes it to zero value of T, and return its address, which is a value of type *T.
+> `p := new(int) // p, of type *int, points to an unnamed int variable`
+> `fmt.Println(*p) // "0"`  
+> `*p = 2 // sets the unnamed int to 2`  
+> `fmt.Println(*p) // "2"`
 
